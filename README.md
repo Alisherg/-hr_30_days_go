@@ -1,1 +1,1 @@
-# -hr_30_days_go
+HackerRank - 30 Days of Code in Python
