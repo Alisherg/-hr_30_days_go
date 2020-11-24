@@ -3,50 +3,33 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"io"
-	"math"
 	"os"
 	"strconv"
-	"strings"
 )
 
-func solve(mealCost float64, tipPercent int32, taxPercent int32) {
-
-	fmt.Scan(&mealCost, &tipPercent, &taxPercent)
-
-	totalCost := mealCost + (mealCost * float64(tipPercent) / 100) + (mealCost * float64(taxPercent) / 100)
-	fmt.Println(math.Round(totalCost))
-}
-
 func main() {
-	reader := bufio.NewReaderSize(os.Stdin, 1024*1024)
+	var _ = strconv.Itoa
 
-	mealCost, err := strconv.ParseFloat(readLine(reader), 64)
-	checkError(err)
+	var i uint64 = 4
+	var d float64 = 4.0
+	var s string = "HackerRank "
 
-	tipPercentTemp, err := strconv.ParseInt(readLine(reader), 10, 64)
-	checkError(err)
-	tipPercent := int32(tipPercentTemp)
+	input := bufio.NewScanner(os.Stdin)
 
-	taxPercentTemp, err := strconv.ParseInt(readLine(reader), 10, 64)
-	checkError(err)
-	taxPercent := int32(taxPercentTemp)
+	var (
+		secUint uint64
+		secFlt  float64
+		secStr  string
+	)
 
-	solve(mealCost, tipPercent, taxPercent)
-
-}
-
-func readLine(reader *bufio.Reader) string {
-	str, _, err := reader.ReadLine()
-	if err == io.EOF {
-		return ""
+	fmt.Scan(&secUint)
+	fmt.Scan(&secFlt)
+	for input.Scan() {
+		secStr = input.Text()
+		break
 	}
 
-	return strings.TrimRight(string(str), "\r\n")
-}
-
-func checkError(err error) {
-	if err != nil {
-		panic(err)
-	}
+	fmt.Println(i + secUint)
+	fmt.Printf("%.1f\n", d+secFlt)
+	fmt.Println(s + secStr)
 }
