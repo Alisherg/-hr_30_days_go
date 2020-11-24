@@ -1,1 +1,1 @@
-HackerRank - 30 Days of Code in Python
+HackerRank - 30 Days of Code in Go

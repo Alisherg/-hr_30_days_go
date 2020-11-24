@@ -7,10 +7,10 @@ import (
 )
 
 func main() {
+
 	input := bufio.NewScanner(os.Stdin)
 	for input.Scan() {
 		fmt.Println("Hello, World.")
 		fmt.Println(input.Text())
-		break
 	}
 }
